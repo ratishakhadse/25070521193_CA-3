@@ -1,0 +1,47 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f5fb;
+  color: #1e293b;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 8px;
+  font-size: 48px;
+  color: #4f46e5;
+}
+
+p {
+  color: #64748b;
+}
+
+.status {
+  margin-top: 24px;
+  padding: 24px;
+  width: min(100%, 500px);
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 8px 30px #1e293b12;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.status strong {
+  color: #15803d;
+}

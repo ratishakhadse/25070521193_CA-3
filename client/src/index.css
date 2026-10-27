@@ -1,0 +1,491 @@
+
+/* ========================================
+   EDUPLANNER — PREMIUM GLOBAL THEME
+======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #f5f5ff;
+  background: #0b0d17;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+  --bg: #0b0d17;
+  --surface: #131625;
+  --surface-light: #191d30;
+  --primary: #8b7cff;
+  --primary-hover: #a397ff;
+  --text: #f5f5ff;
+  --muted: #969bb5;
+  --border: rgba(255, 255, 255, 0.09);
+  --radius: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 15% 0%, rgba(104, 82, 230, 0.16), transparent 40%),
+    radial-gradient(ellipse at 100% 100%, rgba(38, 119, 192, 0.10), transparent 40%),
+    var(--bg);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: var(--primary-hover);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #c1b9ff;
+}
+
+::selection {
+  background: rgba(139, 124, 255, 0.35);
+}
+
+/* ========================================
+   LOGIN / SIGNUP PAGE
+   Add className="auth-page" to the wrapper
+======================================== */
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-page::before,
+.auth-page::after {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.auth-page::before {
+  background: #7864ff;
+  top: -130px;
+  left: -100px;
+}
+
+.auth-page::after {
+  background: #2985d6;
+  bottom: -150px;
+  right: -100px;
+}
+
+/* Main login card */
+
+.auth-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 440px;
+  padding: 42px;
+  background: rgba(19, 22, 37, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 24px;
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  animation: authAppear 0.55s ease both;
+}
+
+.auth-logo {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 28px;
+  border-radius: 17px;
+  color: white;
+  font-family: 'Manrope', sans-serif;
+  font-size: 25px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #a095ff, #6651e8);
+  box-shadow: 0 8px 26px rgba(113, 91, 240, 0.30);
+}
+
+.auth-card h1,
+.auth-card h2 {
+  margin: 0 0 12px;
+  color: var(--text);
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(27px, 5vw, 33px);
+  line-height: 1.25;
+  font-weight: 800;
+  letter-spacing: -1.1px;
+}
+
+.auth-subtitle {
+  margin: 0 0 30px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Labels and inputs */
+
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+}
+
+.auth-card label {
+  display: block;
+  margin-bottom: 8px;
+  color: #d9daeb;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.auth-card input {
+  display: block;
+  width: 100%;
+  min-height: 49px;
+  padding: 13px 15px;
+  color: #f8f8ff;
+  background: #0e1120;
+  border: 1px solid #2a2e44;
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.auth-card input::placeholder {
+  color: #70758e;
+}
+
+.auth-card input:hover {
+  border-color: #484361;
+}
+
+.auth-card input:focus {
+  background: #111426;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(139, 124, 255, 0.13);
+}
+
+/* Primary button */
+
+.auth-card button,
+.auth-submit {
+  width: 100%;
+  min-height: 50px;
+  padding: 13px 18px;
+  border: 0;
+  border-radius: 12px;
+  color: white;
+  font-weight: 700;
+  background: linear-gradient(135deg, #9485ff, #7059e8);
+  box-shadow: 0 8px 22px rgba(112, 89, 232, 0.20);
+  transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+}
+
+.auth-card button:hover,
+.auth-submit:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  box-shadow: 0 12px 28px rgba(112, 89, 232, 0.32);
+}
+
+.auth-card button:active,
+.auth-submit:active {
+  transform: translateY(0);
+}
+
+.auth-card button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.auth-footer {
+  margin: 26px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.auth-divider {
+  height: 1px;
+  margin: 26px 0;
+  background: var(--border);
+}
+
+/* Error and success messages */
+
+.auth-error,
+.error-message {
+  padding: 12px 14px;
+  color: #ffb7c0;
+  background: rgba(239, 68, 87, 0.09);
+  border: 1px solid rgba(239, 68, 87, 0.23);
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+.auth-success,
+.success-message {
+  padding: 12px 14px;
+  color: #a5f3c5;
+  background: rgba(34, 197, 94, 0.09);
+  border: 1px solid rgba(34, 197, 94, 0.20);
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+/* ========================================
+   DASHBOARD — MATCHING PREMIUM THEME
+======================================== */
+
+.dashboard,
+.dashboard-page,
+.app-container {
+  color: var(--text);
+}
+
+.dashboard h1,
+.dashboard h2,
+.dashboard h3,
+.dashboard-page h1,
+.dashboard-page h2,
+.dashboard-page h3 {
+  font-family: 'Manrope', sans-serif;
+  letter-spacing: -0.5px;
+}
+
+.dashboard-card,
+.stat-card,
+.subject-card,
+.task-card,
+.session-card {
+  background: linear-gradient(
+    145deg,
+    rgba(25, 29, 48, 0.96),
+    rgba(18, 21, 36, 0.96)
+  );
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  transition: transform 0.22s ease, border-color 0.22s ease;
+}
+
+.dashboard-card:hover,
+.stat-card:hover,
+.subject-card:hover,
+.task-card:hover,
+.session-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(139, 124, 255, 0.32);
+}
+
+/* Dashboard inputs */
+
+.dashboard input,
+.dashboard select,
+.dashboard textarea,
+.dashboard-page input,
+.dashboard-page select,
+.dashboard-page textarea {
+  color: var(--text);
+  background: #111426;
+  border: 1px solid #2a2e44;
+  border-radius: 10px;
+  padding: 11px 13px;
+  outline: none;
+}
+
+.dashboard input:focus,
+.dashboard select:focus,
+.dashboard textarea:focus,
+.dashboard-page input:focus,
+.dashboard-page select:focus,
+.dashboard-page textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(139, 124, 255, 0.12);
+}
+
+/* Dashboard buttons */
+
+.dashboard button,
+.dashboard-page button {
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.dashboard button:hover,
+.dashboard-page button:hover {
+  filter: brightness(1.1);
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0d17;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #35334e;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6657b5;
+}
+
+/* Animations */
+
+@keyframes authAppear {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 520px) {
+  .auth-page {
+    padding: 22px 15px;
+  }
+
+  .auth-card {
+    padding: 30px 23px;
+    border-radius: 20px;
+  }
+
+  .auth-logo {
+    margin-bottom: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===== EDUPLANNER PREMIUM BACKGROUND ===== */
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #0b1020 !important;
+  background-image:
+    radial-gradient(
+      ellipse at 15% 20%,
+      rgba(113, 83, 230, 0.24),
+      transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 85% 75%,
+      rgba(42, 125, 210, 0.20),
+      transparent 40%
+    ),
+    linear-gradient(135deg, #0b1020 0%, #11152b 50%, #0a1220 100%) !important;
+  background-attachment: fixed;
+}
+
+/* Subtle grid texture */
+.auth-page {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  overflow: hidden;
+  background: transparent !important;
+}
+
+.auth-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, black, transparent 90%);
+}
+
+/* Soft glowing ambient lights */
+.auth-page::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 300px;
+  height: 300px;
+  top: 12%;
+  right: 8%;
+  border-radius: 50%;
+  background: rgba(125, 92, 255, 0.15);
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+/* Keep the login card above the background */
+.auth-card {
+  position: relative;
+  z-index: 2;
+  background: rgba(19, 22, 40, 0.88) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(22px);
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.40),
+    0 0 50px rgba(113, 83, 230, 0.08);
+}
